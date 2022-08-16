@@ -1,9 +1,14 @@
 import './App.css';
+import Sidebar from './components/sidebar/Sidebar';
+import Timeline from './components/timeline/Timeline';
+import Weidget from './components/weidget/Weidget';
 
 function App() {
   return (
-    <div className="App">
-      テスト
+    <div className="app">
+      <Sidebar />
+      <Timeline />
+      <Weidget />
     </div>
   );
 }

@@ -20,7 +20,7 @@ export default function Sidebar() {
       <TwitterIcon className='sidebar--twitterIcon' />
 
       {/* サイドバーoptions */}
-      <SidebarOption Icon={HomeOutlinedIcon} text="ホーム" />
+      <SidebarOption Icon={HomeOutlinedIcon} text="ホーム" active />
       <SidebarOption Icon={SearchIcon} text="話題を検索" />
       <SidebarOption Icon={NotificationsNoneOutlinedIcon} text="通知" />
       <SidebarOption Icon={MailOutlineIcon} text="メッセージ" />

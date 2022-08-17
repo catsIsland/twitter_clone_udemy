@@ -20,7 +20,7 @@ function Weidget() {
         <TwitterTimelineEmbed
           sourceType="profile"
           screenName="Starbucks_J"
-          options={{height: 400}}
+          options={{height: "500px"}}
         />
         <TwitterShareButton
           url={'https://facebook.com/Starbucks_J'}

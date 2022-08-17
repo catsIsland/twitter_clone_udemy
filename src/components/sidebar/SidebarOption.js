@@ -3,9 +3,9 @@ import "./SidebarOption.css";
 
 
 function SidebarOption(props) {
-  const { text, Icon } = props
+  const { text, Icon, active } = props;
   return (
-    <div className='sidebarOption'>
+    <div className={`sidebarOption ${active && "sidebarOptionActive"}`}>
       <Icon />
       <h2>{text}</h2>
     </div>

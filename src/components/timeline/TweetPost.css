@@ -49,3 +49,14 @@ p {
   margin: 0;
   padding: 0;
 }
+
+.tweetpost--footer svg {
+  cursor: pointer;
+}
+
+.tweetpost--footer svg:hover {
+  color: var(--twitter-color);
+}
+.deleteIcon:hover {
+  color: red !important;
+}

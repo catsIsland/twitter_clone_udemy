@@ -2,9 +2,24 @@ import { ChatBubbleOutline, FavoriteBorder, PublishOutlined, Repeat, VerifiedUse
 import { Avatar } from '@mui/material'
 import React, { forwardRef } from 'react';
 import "./TweetPost.css";
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import { collection, deleteDoc, doc, getDocs, query, where } from 'firebase/firestore';
+import db from "../../firebase";
 
 const TweetPost = forwardRef((props, ref) => {
   const { displayName, userName, verified, tweetText, avator, image } = props;
+
+  const deleteUser = async (string) => {
+    const postData = collection(db, 'post');
+    const q = query(postData, where('tweetText', '==', string));
+    const querySnapshot = await getDocs(q);
+
+    querySnapshot.forEach(async (document) => {
+      const userDocumentRef = doc(db, 'post', document.id);
+      await deleteDoc(userDocumentRef);
+    });
+  };
+
   return (
     <div className='tweetpost' ref={ref}>
       <div className='tweetpost--avator'>
@@ -31,6 +46,7 @@ const TweetPost = forwardRef((props, ref) => {
           <Repeat fontSize='small' />
           <FavoriteBorder fontSize='small' />
           <PublishOutlined fontSize='small' />
+          <DeleteOutlineOutlinedIcon fontSize='small' className='deleteIcon' onClick={() => deleteUser(tweetText)} />
         </div>
       </div>
     </div>
